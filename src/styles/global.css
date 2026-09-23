@@ -138,6 +138,23 @@ p { color: #667085; }
 .site-footer { border-top: 1px solid #e1e5ee; background: #fff; padding: 35px 0; }
 .footer-content { display: flex; justify-content: space-between; gap: 20px; }
 .footer-content p { margin: 3px 0; font-size: .9rem; }
+
+/* Professional footer styles */
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 22px; align-items: start; padding: 28px 0; }
+.footer-brand .footer-title { font-size: 1.1rem; letter-spacing: .18em; font-weight: 900; margin-bottom: 6px; }
+.footer-brand .footer-tag { color: #6b7486; margin: 0; }
+.footer-contact h4, .footer-location h4, .footer-links h4 { margin: 0 0 8px; font-size: 0.95rem; }
+.footer-contact p, .footer-location p { margin: 2px 0; color: #6b7486; }
+.footer-links a { display: block; margin: 6px 0; color: inherit; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-bottom { border-top: 1px solid #e1e5ee; padding: 14px 0; margin-top: 10px; display: flex; justify-content: center; }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 .dark { background: #111827; color: #f3f4f6; min-height: 100vh; }
