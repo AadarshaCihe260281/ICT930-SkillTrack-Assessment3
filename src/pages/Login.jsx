@@ -21,7 +21,7 @@ export default function Login() {
 	};
 
 	return (
-		<section className="section container narrow">
+		<section className="section container narrow auth-center">
 			<div className="page-heading">
 				<span className="eyebrow">ACCOUNT</span>
 				<h1>Welcome back.</h1>

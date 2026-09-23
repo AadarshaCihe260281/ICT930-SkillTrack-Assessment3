@@ -103,6 +103,9 @@ p { color: #667085; }
 .feature-list span { font-weight: 800; color: #8a94a6; }
 .feature-list p { margin: 0; }
 .page-heading { margin-bottom: 35px; max-width: 760px; }
+.auth-center { display: grid; min-height: calc(100vh - 160px); align-items: center; padding-top: 20px; padding-bottom: 40px; }
+.auth-center .form-card { max-width: 520px; margin-left: auto; margin-right: auto; box-shadow: 0 20px 50px rgba(23,32,51,0.08); }
+.auth-center .page-heading { text-align: center; }
 .page-heading h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
 .course-toolbar { display: grid; grid-template-columns: 1fr auto; gap: 18px; margin-bottom: 18px; padding: 18px; background: #fff; border: 1px solid #e1e5ee; border-radius: 14px; }
 .search-box input, .filters select, .form-card input, .form-card textarea { width: 100%; border: 1px solid #d9dee8; background: #fff; color: #172033; border-radius: 10px; padding: 12px 14px; outline: none; }
