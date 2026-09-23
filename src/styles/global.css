@@ -37,7 +37,8 @@ img { display: block; max-width: 100%; }
 }
 .nav-links { display: flex; align-items: center; gap: 8px; }
 .nav-links a, .theme-button { border: 0; background: transparent; padding: 10px 13px; border-radius: 9px; text-decoration: none; color: #5e687b; cursor: pointer; }
-.nav-links a:hover, .nav-links a.active, .theme-button:hover { background: #f0f2f7; color: #172033; }
+.nav-links a:hover, .theme-button:hover { background: #f0f2f7; color: #172033; }
+.nav-links a.active { background: transparent; color: #172033; font-weight: 700; }
 .menu-button { display: none; border: 0; background: transparent; font-size: 1.7rem; cursor: pointer; }
 .hero { padding: 86px 0 72px; background: radial-gradient(circle at 85% 10%, #dfe8ff 0, transparent 32%), linear-gradient(180deg,#f7f8fc,#fff); }
 .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 70px; align-items: center; }
@@ -143,11 +144,16 @@ p { color: #667085; }
 .dark .site-header, .dark .site-footer, .dark .course-card, .dark .hero-card, .dark .course-toolbar, .dark .state-box, .dark .empty-state, .dark .lesson, .dark .stat-card, .dark .dashboard-course, .dark .form-card, .dark .modal, .dark .feature-list > div { background: #182235; border-color: #2d374a; }
 .dark .hero { background: #111827; }
 .dark .soft-section { background: #141d2c; }
-.dark p, .dark .nav-links a, .dark .theme-button, .dark .course-meta, .dark .stat-card span, .dark .detail-meta span, .dark .enrolled-panel span { color: #aeb8c8; }
-.dark h1, .dark h2, .dark h3, .dark .nav-links a.active, .dark .theme-button, .dark .brand, .dark .detail-meta strong { color: #f3f4f6; }
+.dark p, .dark .course-meta, .dark .stat-card span, .dark .detail-meta span, .dark .enrolled-panel span { color: #aeb8c8; }
+.dark .nav-links a, .dark .theme-button { color: #f3f4f6; }
+.dark h1, .dark h2, .dark h3, .dark .theme-button, .dark .brand, .dark .detail-meta strong { color: #f3f4f6; }
+.dark .nav-links a.active { background: transparent; color: #f3f4f6; font-weight: 700; }
 .dark .search-box input, .dark .filters select, .dark .form-card input, .dark .form-card textarea { background: #111827; color: #f3f4f6; border-color: #3a4559; }
 .dark .enrolled-panel, .dark .lesson.completed { background: #202b3d; }
 .dark .button-secondary { background: #182235; color: #f3f4f6; border-color: #3a4559; }
+
+/* dark-mode overrides for navbar hover to avoid light hover styles */
+.dark .nav-links a:hover, .dark .theme-button:hover { background: rgba(255,255,255,0.03); color: #f3f4f6; }
 
 @media (max-width: 900px) {
   .hero-grid, .feature-grid, .detail-grid { grid-template-columns: 1fr; }
