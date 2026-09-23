@@ -1,2 +1,67 @@
 import {useContext,useState} from "react";import {Link,useLocation,useNavigate} from "react-router-dom";import {AppContext} from "../context/AppContext";
-export default function Login(){const{login}=useContext(AppContext);const nav=useNavigate();const loc=useLocation();const[form,setForm]=useState({email:"",password:""});const[error,setError]=useState("");const[busy,setBusy]=useState(false);const submit=async e=>{e.preventDefault();setError("");setBusy(true);try{await login(form);nav(loc.state?.from||"/dashboard",{replace:true})}catch(err){setError(err.message)}finally{setBusy(false)}};return <section className="section container narrow"><div className="page-heading"><span className="eyebrow">ACCOUNT</span><h1>Welcome back.</h1><p>Sign in to continue your SkillTrack learning journey.</p></div><form className="form-card" onSubmit={submit}><label>Email<input type="email" required value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/></label><label>Password<input type="password" required minLength="6" value={form.password} onChange={e=>setForm({...form,password:e.target.value})}/></label>{error&&<p className="form-error">{error}</p>}<button className="button button-primary full-width" disabled={busy}>{busy?"Signing in…":"Sign in"}</button><p>New to SkillTrack? <Link to="/register">Create an account</Link></p></form></section>}
+export default function Login() {
+	const { login } = useContext(AppContext);
+	const nav = useNavigate();
+	const loc = useLocation();
+	const [form, setForm] = useState({ email: "", password: "" });
+	const [error, setError] = useState("");
+	const [busy, setBusy] = useState(false);
+	const submit = async (e) => {
+		e.preventDefault();
+		setError("");
+		setBusy(true);
+		try {
+			await login(form);
+			nav(loc.state?.from || "/dashboard", { replace: true });
+		} catch (err) {
+			setError(err.message);
+		} finally {
+			setBusy(false);
+		}
+	};
+
+	return (
+		<section className="section container narrow">
+			<div className="page-heading">
+				<span className="eyebrow">ACCOUNT</span>
+				<h1>Welcome back.</h1>
+				<p>Sign in to continue your SkillTrack learning journey.</p>
+			</div>
+
+			<form className="form-card" onSubmit={submit}>
+				<div className="signin-box">
+					<label>
+						Email
+						<input
+							type="email"
+							required
+							value={form.email}
+							onChange={(e) => setForm({ ...form, email: e.target.value })}
+						/>
+					</label>
+
+					<label>
+						Password
+						<input
+							type="password"
+							required
+							minLength="6"
+							value={form.password}
+							onChange={(e) => setForm({ ...form, password: e.target.value })}
+						/>
+					</label>
+				</div>
+
+				{error && <p className="form-error">{error}</p>}
+
+				<button className="button button-primary full-width" disabled={busy}>
+					{busy ? "Signing in…" : "Sign in"}
+				</button>
+
+				<p>
+					New to SkillTrack? <Link to="/register">Create an account</Link>
+				</p>
+			</form>
+		</section>
+	);
+}
