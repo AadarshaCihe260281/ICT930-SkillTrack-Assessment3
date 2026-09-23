@@ -1,0 +1,2 @@
+import {Navigate,Outlet,useLocation} from "react-router-dom";import {useContext} from "react";import {AppContext} from "../../context/AppContext";
+export default function ProtectedRoute(){const{user,loadingAuth}=useContext(AppContext);const loc=useLocation();if(loadingAuth)return <section className="section container"><p>Checking your session...</p></section>;return user?<Outlet/>:<Navigate to="/login" replace state={{from:loc.pathname}}/>}
