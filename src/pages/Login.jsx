@@ -35,6 +35,7 @@ export default function Login() {
 						<input
 							type="email"
 							required
+							placeholder="abc@skilltrack.local"
 							value={form.email}
 							onChange={(e) => setForm({ ...form, email: e.target.value })}
 						/>
