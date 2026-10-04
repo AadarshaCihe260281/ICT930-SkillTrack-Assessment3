@@ -65,7 +65,7 @@ This structure separates the frontend, backend and database layers and allows us
 ## GitHub Repository
 
 **GitHub URL:**
-`[PASTE YOUR ASSESSMENT 3 GITHUB URL HERE]`
+https://github.com/AadarshaCihe260281/ICT930-SkillTrack-Assessment3
 
 ## Individual Contribution
 
